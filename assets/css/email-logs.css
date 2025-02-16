@@ -1,0 +1,566 @@
+/* Modal styles */
+.upmail-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 24px;
+    border: none;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.modal-close {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    color: #64748b;
+    font-size: 24px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: #0f172a;
+}
+
+.email-details {
+    padding: 24px;
+}
+
+.email-details h3 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.api-response {
+    background: #f8fafc;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.api-response pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: ui-monospace, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.email-message {
+    margin-top: 24px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 24px;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    margin: 4px 10px 0;
+    border: 2px solid #e2e8f0;
+    border-top-color: #0f172a;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error {
+    color: #dc2626;
+    padding: 16px;
+    background: #fef2f2;
+    border-left: 4px solid #dc2626;
+    margin: 16px 0;
+    border-radius: 4px;
+}
+
+/* Table styles */
+.email-logs-table {
+    margin-top: 24px;
+    background: #fff;
+    border-radius: 12px;
+    border: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wp-list-table {
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 800px; /* Prevent table from becoming too narrow */
+}
+
+.wp-list-table th {
+    background: #f8fafc;
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.wp-list-table td {
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.wp-list-table .check-column {
+    width: 40px;
+    padding: 16px 0 16px 16px;
+    vertical-align: middle;
+}
+
+.wp-list-table .check-column input[type="checkbox"] {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.wp-list-table tr:last-child td {
+    border-bottom: none;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-badge.sent {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.status-badge.failed {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Admin responsive styles */
+.email-logs-wrap {
+    margin: 24px 0;
+    padding: 24px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.email-logs-header {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: 24px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 0;
+    align-items: center;
+}
+
+.status-tabs {
+    height: 40px;
+    display: inline-flex;
+    gap: 0;
+    background: #fff;
+    padding: 4px;
+    border-radius: 8px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.status-tabs a {
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 16px;
+    border-radius: 8px;
+    background: transparent;
+    color: #64748b;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.status-tabs a.active {
+    background: #0f172a;
+    color: #fff;
+}
+
+.status-tabs a:hover:not(.active) {
+    background: #e2e8f0;
+}
+
+.status-tabs .count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    margin-left: 8px;
+    color: inherit;
+}
+
+.status-tabs a.active .count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.date-range input[type="text"] {
+    width: 130px;
+    min-width: 0;
+}
+
+.search {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    min-height: 50px !important;
+}
+
+/* Pagination styles */
+.tablenav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: #ffffff;
+    margin-top: 24px;
+}
+
+.tablenav-pages {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.displaying-num {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.pagination-links {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination-links a,
+.pagination-links span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pagination-links span.current {
+    background: #0f172a;
+    color: #fff;
+    border-color: #0f172a;
+}
+
+.pagination-links a:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.per-page {
+    padding: 6px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #fff;
+    color: #64748b;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.per-page:focus {
+    border-color: #0f172a;
+    outline: none;
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.actions .button {
+    height: 36px;
+    min-width: 36px;
+    padding: 0 12px;
+    border-radius: 6px;
+    background: transparent;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.actions .button:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+.actions .delete-email {
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+.actions .delete-email:hover {
+    background: #fef2f2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}
+
+.actions .dashicons {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Bulk actions */
+.bulk-actions {
+    text-align: right;
+}
+
+.delete-all-logs span.dashicons.dashicons-trash {
+     margin-top: 0.4rem;
+}     
+
+.delete-all-logs {
+    background: #dc2626 !important;
+    color: #fff !important;
+    border: 1px solid #dc2626 !important;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.delete-all-logs:hover {
+    background: #b91c1c !important;
+    border-color: #b91c1c !important;
+}
+
+.delete-all-logs .dashicons {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 782px) {
+    .email-logs-wrap {
+        padding: 16px;
+        margin: 16px 0;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .status-tabs {
+        width: 100%;
+    }
+
+    .date-range {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .date-range input[type="text"] {
+        width: 100%;
+    }
+
+    .date-range span {
+        text-align: center;
+    }
+
+    .search {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .search input[type="text"] {
+        width: 100%;
+    }
+
+    .actions {
+        justify-content: flex-start;
+    }
+
+    .actions .button {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .tablenav {
+        flex-wrap: wrap;
+        padding: 12px;
+    }
+
+    .tablenav-pages {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .displaying-num {
+        width: 100%;
+    }
+
+    .pagination-links {
+        flex-wrap: wrap;
+    }
+
+    .per-page {
+        width: 100%;
+    }
+
+    .bulk-actions {
+        text-align: center;
+    }
+
+    .delete-all-logs {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Ensure table is scrollable on mobile */
+@media screen and (max-width: 600px) {
+    .email-logs-table {
+        margin: 16px -16px;
+        width: calc(100% + 32px);
+        border-radius: 0;
+    }
+
+    .wp-list-table {
+        margin: 0;
+    }
+
+    .wp-list-table td,
+    .wp-list-table th {
+        padding: 12px;
+    }
+}
+
+/* Filter button styles */
+button.button.filter-button.secondary {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+button.button.filter-button.secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+/* Reset API Data button styles */
+.button.button-danger {
+    background: #dc2626;
+    border-color: #b91c1c;
+    color: #ffffff;
+}
+
+.button.button-danger:hover {
+    background: #b91c1c;
+    border-color: #991b1b;
+    color: #ffffff;
+}

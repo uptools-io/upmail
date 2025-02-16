@@ -1,0 +1,1424 @@
+/* Variables */
+:root {
+    --upmail-primary: #000000;
+    --upmail-primary-hover: #1a1a1a;
+    --upmail-background: #ffffff;
+    --upmail-foreground: #18181b;
+    --upmail-card-background: #ffffff;
+    --upmail-border: #e4e4e7;
+    --upmail-muted: #71717a;
+    --upmail-radius: 0.75rem;
+    --upmail-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --upmail-ring: 0 0 0 1px rgb(24 24 27 / 0.05);
+}
+
+/* Admin Layout */
+.upmail-admin {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    color: var(--upmail-foreground);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+.upmail-header {
+    background: var(--upmail-primary);
+    color: #fff;
+    padding: 2rem;
+    border-radius: var(--upmail-radius);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.upmail-header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.upmail-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upmail-branding {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.upmail-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.upmail-logo-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.upmail-logo-icon .fa-primary {
+    fill: #fff;
+}
+
+.upmail-logo-icon .fa-secondary {
+    fill: rgba(255, 255, 255, 0.7);
+}
+
+.upmail-logo img {
+    height: 32px;
+    width: auto;
+}
+
+.upmail-logo strong {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+.upmail-version {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    color: #fff;
+}
+
+.upmail-description {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+    color: #fff;
+    max-width: 65ch;
+}
+
+/* Header Actions */
+.upmail-header-actions {
+    display: flex;
+    gap: 0.5rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: var(--upmail-card-background);
+    padding: 0.5rem;
+    border-radius: var(--upmail-radius);
+    box-shadow: var(--upmail-shadow);
+}
+
+.upmail-header-actions .upmail-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--upmail-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--upmail-radius);
+    transition: all 0.2s;
+    background: transparent;
+    border: none;
+    line-height: 1;
+}
+
+.upmail-header-actions .upmail-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--upmail-foreground);
+}
+
+.upmail-header-actions .upmail-button.active {
+    background: var(--upmail-primary);
+    color: white;
+}
+
+.upmail-header-actions .upmail-button .dashicons {
+    width: 1rem;
+    height: 1rem;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* Navigation */
+.upmail-nav {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--upmail-card-background);
+    padding: 0.5rem;
+    border-radius: var(--upmail-radius);
+    box-shadow: var(--upmail-shadow);
+}
+
+.upmail-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--upmail-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--upmail-radius);
+    transition: all 0.2s;
+    background: transparent;
+    border: none;
+}
+
+.upmail-nav-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--upmail-foreground);
+}
+
+.upmail-nav-item.active {
+    background: var(--upmail-primary);
+    color: white;
+}
+
+.upmail-nav-item .dashicons {
+    width: 1rem;
+    height: 1rem;
+    font-size: 1rem;
+}
+
+/* Content */
+.upmail-content {
+    background: var(--upmail-card-background);
+    border: 1px solid var(--upmail-border);
+    border-radius: var(--upmail-radius);
+    box-shadow: var(--upmail-shadow);
+    padding: 1.5rem;
+}
+
+/* Quick Overview */
+.upmail-quick-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.upmail-stat-card {
+    background: var(--upmail-card-background);
+    border: 1px solid var(--upmail-border);
+    border-radius: var(--upmail-radius);
+    padding: 1rem;
+}
+
+.upmail-stat-label {
+    color: var(--upmail-muted);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.upmail-stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--upmail-foreground);
+}
+
+/* Chart */
+.upmail-chart-container {
+    background: var(--upmail-card-background);
+    border: 1px solid var(--upmail-border);
+    border-radius: var(--upmail-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.upmail-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.upmail-chart-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--upmail-foreground);
+}
+
+.upmail-date-range {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.upmail-date-range input {
+    border: 1px solid var(--upmail-border);
+    border-radius: var(--upmail-radius);
+    padding: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.upmail-date-range .upmail-button {
+    height: 2.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .upmail-header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .upmail-header-actions {
+        position: static;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .upmail-header-actions .upmail-button {
+        flex: 1;
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .upmail-nav {
+        position: static;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .upmail-nav-item {
+        flex: 1;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .upmail-quick-overview {
+        grid-template-columns: 1fr;
+    }
+}
+
+.upmail-settings-wrap {
+    max-width: 1200px;
+    margin: 20px;
+    background: #fff;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.upmail-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upmail-logo-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.upmail-logo-icon .fa-primary {
+    fill: #000;
+}
+
+.upmail-logo-icon .fa-secondary {
+    fill: #6b7280;
+}
+
+.upmail-logo img {
+    height: 32px;
+    width: auto;
+}
+
+.upmail-logo strong {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+.upmail-header-right {
+    display: flex;
+    gap: 15px;
+}
+
+.upmail-header-link {
+    text-decoration: none;
+    color: #666;
+    padding: 5px 10px;
+}
+
+.upmail-header-link:hover {
+    color: #0073aa;
+}
+
+.upmail-nav {
+    display: flex;
+    gap: 5px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.upmail-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+    text-decoration: none;
+    color: #666;
+    border-bottom: 2px solid transparent;
+}
+
+.upmail-nav-item:hover {
+    color: #0073aa;
+
+}
+
+.upmail-nav-item.active {
+    color: #0073aa;
+    border-bottom-color: #0073aa;
+}
+
+.upmail-nav-item .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+
+
+.upmail-settings-wrap .page-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d2327;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f1;
+}
+
+.upmail-settings-wrap .nav-tab-wrapper {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #c3c4c7;
+}
+
+.upmail-settings-wrap .nav-tab {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 15px;
+    margin-left: 0;
+    margin-right: 5px;
+    border: 1px solid #c3c4c7;
+    border-bottom: none;
+}
+
+.upmail-settings-wrap .nav-tab-active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+}
+
+.upmail-settings-wrap .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin: 25px 0 15px;
+}
+
+.upmail-settings-wrap .form-table th {
+    padding: 20px 10px 20px 0;
+    width: 200px;
+}
+
+.upmail-settings-wrap .form-table td {
+    padding: 20px 10px;
+}
+
+.upmail-settings-wrap input[type="text"],
+.upmail-settings-wrap input[type="email"],
+.upmail-settings-wrap input[type="password"],
+.upmail-settings-wrap .regular-text {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    color: #374151;
+    width: 100% !important;
+    max-width: 350px !important;
+    font-size: 14px;
+    height: 40px !important;
+    min-height: 40px !important;
+    line-height: 40px !important;
+    padding: 0 14px !important;
+    text-align: left;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.upmail-settings-wrap input[type="text"]:focus,
+.upmail-settings-wrap input[type="email"]:focus,
+.upmail-settings-wrap input[type="password"]:focus,
+.upmail-settings-wrap textarea:focus,
+.upmail-settings-wrap .regular-text:focus {
+    border-color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.upmail-settings-wrap input[type="text"]::placeholder,
+.upmail-settings-wrap input[type="email"]::placeholder,
+.upmail-settings-wrap input[type="password"]::placeholder,
+.upmail-settings-wrap textarea::placeholder {
+    color: #9ca3af;
+}
+
+.upmail-settings-wrap textarea {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    color: #374151;
+    width: 100% !important;
+    max-width: 350px !important;
+    font-size: 14px;
+    min-height: 100px;
+    padding: 10px 14px;
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.upmail-settings-wrap .button {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    min-height: 36px;
+    padding: 4px 15px;
+    margin-left: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.upmail-settings-wrap .button:hover {
+    border-color: #000;
+    color: #000;
+}
+
+.upmail-settings-wrap .button-primary {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.upmail-settings-wrap .button-primary:hover {
+    background: #1a1a1a;
+    border-color: #1a1a1a;
+    color: #fff;
+}
+
+.upmail-settings-wrap .description {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+#upmail_api_validation_result,
+#test_mail_result {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 6px 0;
+}
+
+.upmail-settings-wrap .submit {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f1;
+}
+
+.wp-core-ui.wp-admin .upmail-settings-wrap .submit .button.button-primary,
+.wp-core-ui.wp-admin .upmail-settings-wrap .submit input[type="submit"].button.button-primary {
+    background: #000 !important;
+    border: 1px solid #000 !important;
+    color: #fff !important;
+    min-height: 40px !important;
+    padding: 4px 15px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    min-width: 100px !important;
+    margin: 0 !important;
+}
+
+.wp-core-ui.wp-admin .upmail-settings-wrap .submit .button.button-primary:hover,
+.wp-core-ui.wp-admin .upmail-settings-wrap .submit input[type="submit"].button.button-primary:hover {
+    background: #1a1a1a !important;
+    border-color: #1a1a1a !important;
+    color: #fff !important;
+}
+
+.test-mail-form {
+    margin-top: 20px;
+}
+
+/* API Key Field Styles */
+.api-key-container {
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.api-key-display {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.api-key-mask,
+.api-key-status,
+.api-key-display .button,
+.upmail-settings-wrap input[type="text"],
+.upmail-settings-wrap input[type="email"],
+.upmail-settings-wrap input[type="password"],
+.upmail-settings-wrap textarea {
+    height: 22px;
+    line-height: 40px;
+    padding: 0 14px;
+    border: 1px solid #e5e7eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.api-key-mask {
+    background: #fafafa;
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    letter-spacing: 2px;
+    color: #374151;
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.api-key-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.api-key-input input[type="password"] {
+    flex: 1;
+    max-width: 350px;
+    min-width: 200px;
+    width: 100%;
+}
+
+.api-key-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.api-key-field {
+    flex: 1;
+    min-width: 200px;
+    max-width: 350px;
+    width: 100%;
+}
+
+.api-key-actions {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.api-key-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    transition: all 0.2s;
+    white-space: nowrap;
+    padding: 0 12px;
+}
+
+.api-key-status.valid {
+    background: #f9f9f9;
+    color: #16a34a;
+    border: 1px solid #e5e7eb;
+}
+
+.api-key-status.invalid {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.api-key-status .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-top: -2px;
+}
+
+.api-key-status.valid .dashicons {
+    color: #16a34a;
+}
+
+.api-key-status.invalid .dashicons {
+    color: #dc2626;
+}
+
+.api-key-display .button {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 38px;
+    padding: 0 16px;
+}
+
+.api-key-display .validate-api-key,
+.api-key-display .change-api-key {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    transition: all 0.2s;
+}
+
+.api-key-display .validate-api-key:hover,
+.api-key-display .change-api-key:hover {
+    background: #f9f9f9;
+    border-color: #000;
+    color: #000;
+}
+
+@media screen and (max-width: 480px) {
+    .api-key-display {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .api-key-mask {
+        max-width: 100%;
+    }
+
+    .api-key-status {
+        width: fit-content;
+    }
+
+    .api-key-display .button {
+        width: 100%;
+    }
+}
+
+.upmail-coming-soon {
+    text-align: center;
+    padding: 50px 20px;
+    color: #6b7280;
+}
+
+.upmail-coming-soon .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    color: #9ca3af;
+}
+
+.upmail-coming-soon h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+.upmail-coming-soon p {
+    font-size: 14px;
+    max-width: 400px;
+    margin: 0 auto;
+    color: #6b7280;
+}
+
+/* Email Logs Styles */
+.email-logs-wrap {
+    margin-top: 20px;
+}
+
+.email-logs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.status-tabs {
+    display: flex;
+    gap: 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+}
+
+.status-tabs a {
+    padding: 8px 16px;
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-right: 1px solid #e5e7eb;
+    transition: all 0.2s;
+}
+
+.status-tabs a:last-child {
+    border-right: none;
+}
+
+.status-tabs a:hover {
+    background: #f9fafb;
+    color: #000;
+}
+
+.status-tabs a.active {
+    background: #f3f4f6;
+    color: #000;
+}
+
+.status-tabs .count {
+    background: #e5e7eb;
+    color: #374151;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.status-tabs a.active .count {
+    background: #000;
+    color: #fff;
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 4px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+}
+
+.date-range input[type="text"] {
+    border: none;
+    padding: 4px 8px;
+    width: 120px;
+    min-height: 30px;
+}
+
+.date-range input[type="text"]:focus {
+    box-shadow: none;
+}
+
+.date-range span {
+    color: #6b7280;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search input[type="text"] {
+    padding-right: 40px;
+    min-height: 40px;
+    width: 250px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+}
+
+.search .button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: none;
+    border: none;
+    padding: 0 12px;
+    color: #6b7280;
+}
+
+.search .button:hover {
+    color: #000;
+}
+
+.email-logs-table {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.email-logs-table table {
+    border: none;
+    margin: 0;
+}
+
+.email-logs-table th {
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+    font-weight: 600;
+    padding: 12px;
+}
+
+.email-logs-table td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.sent {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-badge.failed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.actions .button {
+    padding: 4px 8px;
+    min-height: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.actions .button .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.tablenav {
+    padding: 15px;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.tablenav-pages {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.displaying-num {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.per-page {
+    min-height: 30px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 0 8px;
+}
+
+.pagination-links {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-links a,
+.pagination-links span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    padding: 0 5px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    background: #fff;
+    color: #374151;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.pagination-links a:hover {
+    border-color: #000;
+    color: #000;
+}
+
+.pagination-links .current {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.bulk-actions {
+    padding: 15px;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+}
+
+.no-logs {
+    text-align: center;
+    padding: 40px !important;
+    color: #6b7280;
+}
+
+.upmail-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.modal-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.email-details {
+    padding: 20px;
+}
+
+.email-details h3 {
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.email-details p {
+    margin: 10px 0;
+}
+
+.email-message {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.spinner {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 50px auto;
+    background: url(../images/spinner.gif) no-repeat center;
+}
+
+.error {
+    color: #dc3232;
+    padding: 10px;
+    background: #fff;
+    border-left: 4px solid #dc3232;
+    margin: 20px 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 782px) {
+    .upmail-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .upmail-header-right {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .upmail-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .upmail-nav-item {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .form-table, 
+    .form-table tbody, 
+    .form-table tr, 
+    .form-table th, 
+    .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .form-table th {
+        padding-bottom: 0;
+    }
+
+    .regular-text,
+    textarea.large-text {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .upmail-header {
+        padding: 15px;
+    }
+
+    .upmail-logo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .upmail-header-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .upmail-nav-item {
+        min-width: 100%;
+        padding: 10px;
+    }
+
+    .upmail-content {
+        padding: 15px;
+    }
+}
+
+/* Common Elements */
+.section-title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.description {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Buttons */
+.button {
+    min-height: 35px;
+    line-height: 2.15384615;
+}
+
+.button.button-primary {
+    min-width: 100px;
+}
+
+/* Heatmap */
+.upmail-heatmap {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.upmail-heatmap-grid {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 15px;
+}
+
+.upmail-heatmap-labels {
+    display: grid;
+    grid-template-rows: repeat(7, 30px);
+    align-items: center;
+}
+
+.upmail-heatmap-day {
+    font-size: 13px;
+    color: #666;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.upmail-heatmap-hours {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #666;
+}
+
+.upmail-heatmap-data {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(7, 30px);
+    gap: 3px;
+}
+
+.upmail-heatmap-cell {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    position: relative;
+}
+
+.upmail-heatmap-cell:hover {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.upmail-heatmap-cell[data-level="0"] { background: #ebedf0; }
+.upmail-heatmap-cell[data-level="1"] { background: #e4e9ff; }
+.upmail-heatmap-cell[data-level="2"] { background: #9fa8ff; }
+.upmail-heatmap-cell[data-level="3"] { background: #6366f1; }
+.upmail-heatmap-cell[data-level="4"] { background: #4338ca; }
+
+.upmail-heatmap-legend {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.upmail-heatmap-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.upmail-heatmap-legend-colors {
+    display: flex;
+    gap: 2px;
+}
+
+.upmail-heatmap-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+}
+
+.upmail-heatmap-color[data-level="0"] { background: #ebedf0; }
+.upmail-heatmap-color[data-level="1"] { background: #e4e9ff; }
+.upmail-heatmap-color[data-level="2"] { background: #9fa8ff; }
+.upmail-heatmap-color[data-level="3"] { background: #6366f1; }
+.upmail-heatmap-color[data-level="4"] { background: #4338ca; }
+
+/* Responsive styles */
+@media screen and (max-width: 782px) {
+    .upmail-heatmap {
+        padding: 10px;
+    }
+
+    .upmail-heatmap-grid {
+        gap: 5px;
+    }
+
+    .upmail-heatmap-cell {
+        height: 15px;
+    }
+
+    .upmail-heatmap-day,
+    .upmail-heatmap-hour {
+        font-size: 10px;
+    }
+}
+
+.upmail-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.upmail-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.upmail-logo .dashicons {
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
+}
+
+.upmail-content .form-table input[type="email"],
+.upmail-content .form-table input[type="text"],
+.upmail-content .form-table input[type="password"] {
+    background: #fff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif !important;
+    color: #374151 !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    font-size: 14px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    line-height: 40px !important;
+    padding: 0 14px !important;
+    text-align: left !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: all 0.2s !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+.upmail-content .form-table input[type="email"]:focus,
+.upmail-content .form-table input[type="text"]:focus,
+.upmail-content .form-table input[type="password"]:focus {
+    border-color: #000 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    outline: none !important;
+}
+
+.wp-core-ui.wp-admin .upmail-content form[action="options.php"] .submit input[type="submit"].button.button-primary {
+    background: #000 !important;
+    border: 1px solid #000 !important;
+    color: #fff !important;
+    min-height: 40px !important;
+    padding: 4px 15px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    min-width: 100px !important;
+    margin: 0 !important;
+}
+
+.wp-core-ui.wp-admin .upmail-content form[action="options.php"] .submit input[type="submit"].button.button-primary:hover {
+    background: #1a1a1a !important;
+    border-color: #1a1a1a !important;
+    color: #fff !important;
+}
+
+.api-key-input .save-api-key {
+    background: #000 !important;
+    border: 1px solid #000 !important;
+    color: #fff !important;
+    min-height: 40px !important;
+    padding: 4px 15px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    min-width: 100px !important;
+    margin: 0 !important;
+}
+
+.api-key-input .save-api-key:hover {
+    background: #1a1a1a !important;
+    border-color: #1a1a1a !important;
+    color: #fff !important;
+}
+
+.api-key-input .cancel-api-key {
+    background: #fff !important;
+    border: 1px solid #71717a !important;
+    color: #71717a !important;
+    min-height: 40px !important;
+    padding: 4px 15px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+}
+
+.api-key-input .cancel-api-key:hover {
+    background: #f4f4f5 !important;
+} 
